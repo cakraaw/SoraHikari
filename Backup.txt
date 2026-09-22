@@ -1,0 +1,16 @@
+const schedule = [
+    {day:"12",mon:"AUG 2026",cat:"Live",title:"Sora Hikari Live Performance",loc:"Jakarta",time:"19:00 WIB"},
+    {day:"20",mon:"AUG 2026",cat:"Fan Meeting",title:"Sora Hikari Fan Meeting",loc:"Jakarta",time:"14:00 WIB"},
+    {day:"05",mon:"SEP 2026",cat:"Festival",title:"Indonesia Idol Festival",loc:"Jakarta",time:"16:00 WIB"}
+  ];
+
+  const galleryPhotos = [
+    {cat:"live",img:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=80",label:"Live Stage"},
+    {cat:"event",img:"https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=500&q=80",label:"Fan Event"},
+    {cat:"members",img:"https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80",label:"Members"},
+    {cat:"bts",img:"https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?auto=format&fit=crop&w=500&q=80",label:"Behind The Scene"},
+    {cat:"live",img:"https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=500&q=80",label:"Live Performance"},
+    {cat:"members",img:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=500&q=80",label:"Member Portrait"},
+    {cat:"event",img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=80",label:"Festival"},
+    {cat:"bts",img:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=80",label:"Rehearsal"}
+  ];
