@@ -424,7 +424,7 @@ section{position:relative;}
 /* ---------- MEMBERS ---------- */
 .members {
   display: grid;
-  padding: 80px 0;
+  padding: 80px 5%;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
@@ -432,9 +432,15 @@ section{position:relative;}
   margin: 0 auto;
 }
 
-.member-title {
-  margin-bottom: 20px;
-  font-size: 28px;
+.members .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.members .section-title {
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .member-card {
@@ -468,6 +474,7 @@ section{position:relative;}
   transform: scale(1.05);
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
   .members {
     grid-template-columns: repeat(2, 1fr);
@@ -995,7 +1002,7 @@ footer{
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#music">Music</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="https://bit.ly/FORMULIRSORAHIKARI" target="_blank" rel="noopener noreferrer">Link Cheki</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeoNAH7JWSgz-hp5hSBf0ANV8BMrhZz6EUu9lvLglrjqCpk-Q/closedform" target="_blank" rel="noopener noreferrer">Link Cheki</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
