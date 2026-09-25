@@ -422,31 +422,34 @@ section{position:relative;}
 }
 
 /* ---------- MEMBERS ---------- */
+
 .members {
-  display: grid;
-  padding: 80px 5%;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+  padding: 80px 0;
+  background: var(--white);
 }
 
 .members .container {
-  width: 100%;
-  max-width: 1100px;
+  width: min(1200px, 92%);
   margin: 0 auto;
 }
 
-.members .section-title {
-  margin-bottom: 24px;
+.members .section-head {
   text-align: center;
+  margin: 0 auto 3.2rem;
+  max-width: 700px;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
 }
 
 .member-card {
   width: 100%;
+  min-width: 0;
 }
-
 
 .member-link {
   display: block;
@@ -460,6 +463,8 @@ section{position:relative;}
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 16px;
+  background: #eaf6fc;
+  box-shadow: var(--shadow-soft);
 }
 
 .member-photo img {
@@ -467,25 +472,68 @@ section{position:relative;}
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  object-position: center;
+  transition: transform 0.35s ease;
 }
 
 .member-link:hover .member-photo img {
   transform: scale(1.05);
 }
 
+.member-info {
+  text-align: center;
+  padding: 14px 5px 0;
+}
+
+.member-number {
+  display: block;
+  font-size: 11px;
+  color: var(--sky-deep);
+  letter-spacing: 0.12em;
+}
+
+.member-name {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .members-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
   .members {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 60px 0;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 }
 
+/* SMALL MOBILE */
 @media (max-width: 480px) {
-  .members {
-    grid-template-columns: repeat(2, 1fr);
+  .members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+  }
+
+  .member-info {
+    padding-top: 10px;
+  }
+
+  .member-name {
+    font-size: 0.95rem;
   }
 }
 
@@ -1247,22 +1295,37 @@ const musicList = [
 
 /* ---------- RENDER ---------- */
 
-const memberContainer = document.querySelector(".members");
+const memberContainer = document.getElementById("membersGrid");
 
-memberContainer.innerHTML = members.map(member => `
-  <div class="member-card">
-    <a href="${member.ig}" target="_blank" rel="noopener noreferrer" class="member-link">
-      <div class="member-photo">
-        <img src="${member.photo}" alt="${member.name}" loading="lazy">
+if (memberContainer) {
+  memberContainer.innerHTML = members.map(member => `
+    <div class="member-card reveal">
+
+      <a
+        href="${member.ig}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="member-link"
+      >
+
+        <div class="member-photo">
+          <img
+            src="${member.photo}"
+            alt="${member.name}"
+            loading="lazy"
+          >
+        </div>
+
+      </a>
+
+      <div class="member-info">
+        <span class="member-number">${member.n}</span>
+        <span class="member-name">${member.name}</span>
       </div>
-    </a>
 
-    <div class="member-info">
-      <span class="member-number">${member.n}</span>
-      <span class="member-name">${member.name}</span>
     </div>
-  </div>
-`).join("");
+  `).join("");
+}
 
 
 
