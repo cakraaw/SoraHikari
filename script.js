@@ -119,21 +119,6 @@
 
     {
       cat: "Stage",
-      img: "GALLERY/WTC.jpg",
-      label: "Sora Hikari Performance"
-    },
-    {
-      cat: "Stage",
-      img: "GALLERY/WTC (2).jpg",
-      label: "Sora Hikari Performance"
-    },
-    {
-      cat: "Stage",
-      img: "GALLERY/OTSUKAREE WTC.jpg",
-      label: "Sora Hikari Performance"
-    },
-    {
-      cat: "Stage",
       img: "GALLERY/FYL02315.jpg",
       label: "Sora Hikari Performance"
     },
