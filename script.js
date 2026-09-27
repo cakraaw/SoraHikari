@@ -81,6 +81,10 @@
 
 
   const galleryPhotos = [
+
+    /* =========================================================
+     GALLERY PHOTOS
+     ========================================================= */ 
     {
       cat: "Photo",
       img: "GALLERY/DSCF4023.jpg",
@@ -113,14 +117,42 @@
     },
     {
       cat: "Photo",
+      img: "GALLERY/DSCF0113.jpg",
+      label: "Sora Hikari Group Photo"
+    },
+    {
+      cat: "Photo",
       img: "GALLERY/DSCF4318.jpg",
       label: "Sora Hikari Group Photo"
     },
-
-    {
-      cat: "Stage",
+        {
+      cat: "Photo",
       img: "GALLERY/FYL02315.jpg",
       label: "Sora Hikari Performance"
+    },
+
+    /* =========================================================
+     STAGE PHOTOS
+     ========================================================= */
+    {
+      cat: "Stage",
+      img: "GALLERY/DSCF4151.jpg",
+      label: "Sora Hikari Performance"
+    },
+    {
+      cat: "Stage",
+      img: "GALLERY/DSCF4263.jpg",
+      label: "Sora Hikari Performance"
+    },
+    {
+      cat: "Stage",
+      img: "GALLERY/DSCF4238.jpg",
+      label: "Sora Hikari Performance"
+    },
+    {
+      cat: "Stage",
+      img: "GALLERY/DSCF4252.jpg",
+      label: "Sora Hikari Performance"  
     },
     {
       cat: "Stage",
@@ -135,6 +167,11 @@
     {
       cat: "Stage",
       img: "GALLERY/DSCF0244.jpg",
+      label: "Sora Hikari Performance"
+    },
+    {
+      cat: "Stage",
+      img: "GALLERY/DSCF0267.jpg",
       label: "Sora Hikari Performance"
     }
   ];
