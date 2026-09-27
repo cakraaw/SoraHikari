@@ -30,11 +30,20 @@
     status: "Upcoming"
   },
   {
-    date: "17/18",
+    date: "18",
     month: "Oktober",
-    day: "TBA",
+    day: "Minggu",
     title: "Metal Nightmare",
     location: "ITC Depok",
+    time: "TBA",
+    status: "Upcoming"
+  }
+  {
+    date: "TBA",
+    month: "TBA",
+    day: "TBA",
+    title: "TBA",
+    location: "TBA",
     time: "TBA",
     status: "Upcoming"
   }
