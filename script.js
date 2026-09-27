@@ -37,7 +37,7 @@
     location: "ITC Depok",
     time: "TBA",
     status: "Upcoming"
-  }
+  },
   {
     date: "TBA",
     month: "TBA",
@@ -46,7 +46,7 @@
     location: "TBA",
     time: "TBA",
     status: "Upcoming"
-  }
+  },
 ];
 
   const galleryPhotos = [
