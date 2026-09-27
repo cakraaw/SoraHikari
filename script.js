@@ -124,11 +124,6 @@
     },
     {
       cat: "Stage",
-      img: "GALLERY/wtc23.jpg",
-      label: "Sora Hikari Performance"
-    },
-    {
-      cat: "Stage",
       img: "GALLERY/DSCF0241.jpg",
       label: "Sora Hikari Performance"
     },
