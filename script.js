@@ -21,7 +21,7 @@
     },
     {
       n: "",
-      photo: "MEMBER/shirapiw.jpg",
+      photo: "MEMBER/_DSC4447.jpg",
       name: "shirapiw",
       color: "#C6B8E8",
       bio: "biodata/shirapiw.html",
