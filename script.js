@@ -213,34 +213,35 @@
 const memberContainer = document.getElementById("membersGrid");
 
 if (memberContainer) {
-  memberContainer.innerHTML = members.map((member) => {
-    return `
-      <div class="member-card reveal">
+memberContainer.innerHTML = members.map((member) => {
+  return `
+    <div class="member-card reveal">
 
-        <a
-          href="${member.bio}"
-          class="member-link"
-          aria-label="Biodata ${member.name}"
-        >
+      <a
+        href="${member.bio}"
+        class="member-link"
+        aria-label="Biodata ${member.name}"
+      >
 
-          <div class="member-photo">
-            <img
-              src="${member.photo}"
-              alt="${member.name}"
-              loading="lazy"
-            >
-          </div>
+        <div class="member-photo">
+          <img
+            src="./${member.photo}"
+            alt="${member.name}"
+            loading="lazy"
+            onerror="this.src='./MEMBER/default.jpg';"
+          >
+        </div>
 
-          <div class="member-info">
-            <span class="member-number">${member.n}</span>
-            <span class="member-name">${member.name}</span>
-          </div>
+        <div class="member-info">
+          <span class="member-number">${member.n}</span>
+          <span class="member-name">${member.name}</span>
+        </div>
 
-        </a>
+      </a>
 
-      </div>
-    `;
-  }).join("");
+    </div>
+  `;
+}).join("");
 }
 
 
