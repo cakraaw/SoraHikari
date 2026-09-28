@@ -61,7 +61,7 @@ section{position:relative;}
   color:var(--ink-soft);
   max-width:560px;
   margin-top:.6rem;
-  font-weight:300;
+  font-weight:700;
 }
 .section-head{
   text-align:center;
@@ -770,9 +770,9 @@ section{position:relative;}
   background:linear-gradient(160deg, var(--twilight-1), var(--twilight-2) 60%, var(--twilight-3));
   color:#fff;
 }
-.music .section-title,.music .eyebrow{color:#fff;}
+.music .section-title,.music .eyebrow{color:#000;}
 .music .eyebrow::before{color:var(--gold-soft);}
-.music .section-sub{color:rgba(255,255,255,.75);}
+.music .section-sub{color:rgba(0,0,0,.75);}
 .music-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -1100,68 +1100,291 @@ section{position:relative;}
   }
 }
 
-/* ---------- CONTACT ---------- */
-.contact{
-  padding:7rem 0;
-  background:linear-gradient(180deg, var(--baby-blue), #fff);
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+  padding: 100px 0;
+  background:
+    linear-gradient(
+      180deg,
+      var(--baby-blue) 0%,
+      #eef9fd 50%,
+      #ffffff 100%
+    );
 }
-.contact-wrap{
-  max-width:520px;
-  margin:0 auto;
-  background:#fff;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-soft);
-  padding:2.6rem;
+
+
+/* ---------- CONTACT WRAP ---------- */
+
+.contact-wrap {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+
+  padding: 2.8rem;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 50px rgba(46, 101, 140, 0.12),
+    0 5px 15px rgba(46, 101, 140, 0.06);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
 }
-.biz-inquiry-label{
-  text-align:center;
-  font-family:var(--font-display);
-  font-size:1.4rem;
-  font-weight:700;
-  color:var(--ink);
-  margin-bottom:1.6rem;
+
+.contact-wrap:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 28px 65px rgba(46, 101, 140, 0.16),
+    0 8px 20px rgba(46, 101, 140, 0.08);
 }
-.biz-inquiry-list{
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
+
+
+/* ---------- BUSINESS INQUIRIES ---------- */
+
+.biz-inquiry-label {
+  position: relative;
+
+  text-align: center;
+
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  color: #000;
+
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
 }
-.biz-inquiry-item{
-  display:flex;
-  align-items:center;
-  gap:1rem;
-  padding:1rem 1.2rem;
-  border-radius:16px;
-  border:1.5px solid var(--baby-blue);
-  background:#fbfdff;
-  transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+
+.biz-inquiry-label::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 55px;
+  height: 4px;
+
+  transform: translateX(-50%);
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    var(--sky-deep),
+    var(--lavender)
+  );
 }
-.biz-inquiry-item:hover{
-  border-color:var(--sky-deep);
-  transform:translateY(-3px);
-  box-shadow:0 14px 28px -16px rgba(79,169,218,.5);
+
+
+/* ---------- LIST ---------- */
+
+.biz-inquiry-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1rem;
 }
-.biz-icon{
-  width:46px;height:46px;flex:0 0 auto;
-  border-radius:50%;
-  background:linear-gradient(135deg, var(--sky-deep), var(--lavender));
-  color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;
+
+
+/* ---------- ITEM ---------- */
+
+.biz-inquiry-item {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1.2rem;
+
+  border-radius: 18px;
+
+  border: 1.5px solid rgba(126, 200, 227, 0.45);
+
+  background: #ffffff;
+
+  text-decoration: none;
+
+  color: #000;
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
 }
-.biz-text{display:flex;flex-direction:column;}
-.biz-title{
-  font-size:.68rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--ink-soft);
-  font-weight:600;
+
+.biz-inquiry-item:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--sky-deep);
+
+  box-shadow:
+    0 15px 30px rgba(79, 169, 218, 0.18);
 }
-.biz-value{
-  font-family:var(--font-display);
-  font-size:1.15rem;
-  font-weight:700;
-  color:var(--ink);
+
+
+/* ---------- ICON ---------- */
+
+.biz-icon {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--sky-deep),
+      var(--lavender)
+    );
+
+  color: #fff;
+
+  font-size: 1.25rem;
+
+  box-shadow:
+    0 8px 18px rgba(79, 169, 218, 0.22);
+}
+
+
+/* ---------- TEXT ---------- */
+
+.biz-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.biz-title {
+  font-size: .65rem;
+
+  font-weight: 700;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  color: #000;
+}
+
+.biz-value {
+  font-family: var(--font-display);
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  color: #000;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+  .contact {
+    padding: 75px 0;
+  }
+
+  .contact-wrap {
+    padding: 2rem 1.3rem;
+
+    border-radius: 22px;
+  }
+
+  .biz-inquiry-list {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-inquiry-item {
+    padding: 1rem;
+  }
+
+  .biz-icon {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
+  .biz-value {
+    font-size: .92rem;
+  }
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 480px) {
+
+  .contact {
+    padding: 65px 0;
+  }
+
+  .contact-wrap {
+    padding: 1.7rem 1rem;
+
+    border-radius: 19px;
+  }
+
+  .biz-inquiry-list {
+    gap: .8rem;
+  }
+
+  .biz-inquiry-item {
+    gap: .8rem;
+
+    padding: .9rem;
+
+    border-radius: 15px;
+  }
+
+  .biz-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+
+    border-radius: 13px;
+
+    font-size: 1rem;
+  }
+
+  .biz-title {
+    font-size: .6rem;
+  }
+
+  .biz-value {
+    font-size: .85rem;
+  }
 }
 
 /* ---------- FOOTER ---------- */
