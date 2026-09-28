@@ -873,6 +873,53 @@ section{position:relative;}
   font-size:.65rem;color:rgba(255,255,255,.6);margin-top:.4rem;
 }
 
+/* =========================================================
+   YOUTUBE
+   ========================================================= */
+
+.youtube-section {
+  padding: 100px 0;
+}
+
+.youtube-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .75);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+}
+
+.youtube-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.youtube-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.youtube-info {
+  padding: 20px 24px 24px;
+}
+
+.youtube-info h3 {
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+}
+
+.youtube-info p {
+  margin: 0;
+  font-size: .8rem;
+  opacity: .7;
+}
+
 /* ---------- CONTACT ---------- */
 .contact{
   padding:7rem 0;
