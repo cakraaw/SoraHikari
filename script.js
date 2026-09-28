@@ -27,7 +27,7 @@
     },
     {
       n: "",
-      photo: "MEMBER/_DSC4577.jpg",
+      photo: "MEMBER/rora.jpg",
       name: "rorawrus",
       color: "#9BD8C4",
       ig: "https://www.instagram.com/rorawrus/"
