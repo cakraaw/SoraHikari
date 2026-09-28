@@ -48,7 +48,7 @@
       photo: "MEMBER/millilleta.jpg",
       name: "millilleta",
       color: "#D9AF54",
-      bio: "member/millilleta.html",
+      bio: "biodata/millilleta.html",
       ig: "https://www.instagram.com/millilleta/"
     }
   ];
