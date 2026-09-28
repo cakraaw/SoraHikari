@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lalapan.kol | Sora Hikari</title>
+
+  <meta
+    name="description"
+    content="Lalapan.kol — Member Sora Hikari."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --blue: #145da2;
+      --dark-blue: #2e3192;
+      --sky: #7ec8e3;
+      --light-blue: #dceffb;
+      --white: #ffffff;
+      --ink: #17324d;
+      --member-color: #4FA9DA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--ink);
+      background: var(--light-blue);
+      min-height: 100vh;
+    }
+
+    /* ---------- PAGE ---------- */
+
+    .member-page {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          ellipse at 20% 10%,
+          rgba(255,255,255,.65),
+          transparent 45%
+        ),
+        linear-gradient(
+          180deg,
+          #DCEFFB 0%,
+          #BEE3F8 35%,
+          #9FD3EC 65%,
+          #7EC8E3 100%
+        );
+    }
+
+    /* ---------- CLOUDS ---------- */
+
+    .cloud {
+      position: absolute;
+      background: #fff;
+      border-radius: 100px;
+      opacity: .7;
+      filter: blur(1px);
+      pointer-events: none;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      border-radius: 100px;
+    }
+
+    .cloud-1 {
+      width: 180px;
+      height: 55px;
+      top: 12%;
+      left: -50px;
+      animation: drift 55s linear infinite;
+    }
+
+    .cloud-1::before {
+      width: 85px;
+      height: 85px;
+      top: -42px;
+      left: 20px;
+    }
+
+    .cloud-1::after {
+      width: 65px;
+      height: 65px;
+      top: -30px;
+      right: 25px;
+    }
+
+    .cloud-2 {
+      width: 140px;
+      height: 45px;
+      top: 70%;
+      right: -50px;
+      animation: driftReverse 70s linear infinite;
+      opacity: .5;
+    }
+
+    .cloud-2::before {
+      width: 65px;
+      height: 65px;
+      top: -32px;
+      left: 15px;
+    }
+
+    .cloud-2::after {
+      width: 50px;
+      height: 50px;
+      top: -22px;
+      right: 18px;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(120vw);
+      }
+    }
+
+    @keyframes driftReverse {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-120vw);
+      }
+    }
+
+    /* ---------- CONTENT ---------- */
+
+    .member-content {
+      position: relative;
+      z-index: 5;
+
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 100px 20px 60px;
+    }
+
+    .profile-wrapper {
+      width: 100%;
+      max-width: 900px;
+
+      display: grid;
+      grid-template-columns: 360px 1fr;
+
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(12px);
+
+      border-radius: 30px;
+      overflow: hidden;
+
+      box-shadow:
+        0 20px 60px rgba(20,93,162,.18);
+    }
+
+    /* ---------- PHOTO ---------- */
+
+    .profile-photo {
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+
+      background: var(--member-color);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 60%,
+          rgba(20,93,162,.25)
+        );
+    }
+
+    /* ---------- BIODATA ---------- */
+
+    .profile-info {
+      padding: 55px 50px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-size: .65rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+
+      color: var(--dark-blue);
+
+      margin-bottom: 10px;
+    }
+
+    .profile-name {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: .95;
+
+      color: var(--dark-blue);
+
+      margin-bottom: 8px;
+    }
+
+    .profile-username {
+      color: var(--blue);
+      font-size: .9rem;
+      font-weight: 600;
+
+      margin-bottom: 30px;
+    }
+
+    .profile-bio {
+      color: #38536b;
+      font-size: .95rem;
+      line-height: 1.8;
+
+      max-width: 500px;
+
+      margin-bottom: 30px;
+    }
+
+    /* ---------- DATA ---------- */
+
+    .profile-data {
+      display: grid;
+      gap: 12px;
+
+      margin-bottom: 30px;
+    }
+
+    .data-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .data-label {
+      min-width: 90px;
+
+      font-size: .7rem;
+      font-weight: 700;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      color: var(--dark-blue);
+    }
+
+    .data-value {
+      font-size: .85rem;
+      color: #38536b;
+    }
+
+    /* ---------- BUTTON ---------- */
+
+    .profile-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .profile-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 12px 24px;
+
+      border-radius: 50px;
+
+      background: #fff;
+      color: var(--blue);
+
+      border: 2px solid #fff;
+
+      text-decoration: none;
+
+      font-size: .75rem;
+      font-weight: 700;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      box-shadow:
+        0 7px 18px rgba(20,93,162,.18);
+
+      transition: .3s ease;
+    }
+
+    .profile-btn:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 25px rgba(20,93,162,.25);
+    }
+
+    .profile-btn.back {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 700px) {
+
+      .member-content {
+        padding: 80px 15px 40px;
+      }
+
+      .profile-wrapper {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+      }
+
+      .profile-photo {
+        min-height: 380px;
+        height: 380px;
+      }
+
+      .profile-info {
+        padding: 35px 25px 40px;
+      }
+
+      .profile-name {
+        font-size: clamp(2.5rem, 13vw, 4rem);
+      }
+
+      .profile-bio {
+        font-size: .85rem;
+      }
+
+      .data-row {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .profile-actions {
+        flex-direction: column;
+      }
+
+      .profile-btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .profile-photo {
+        height: 320px;
+        min-height: 320px;
+      }
+
+      .profile-info {
+        padding: 30px 20px;
+      }
+
+      .profile-name {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="member-page">
+
+    <!-- DECORATION -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+
+    <!-- PROFILE -->
+    <section class="member-content">
+
+      <div class="profile-wrapper">
+
+        <!-- PHOTO -->
+        <div class="profile-photo">
+          <img
+            src="../MEMBER/lala.jpg"
+            alt="Lalapan.kol - Sora Hikari"
+          >
+        </div>
+
+        <!-- INFORMATION -->
+        <div class="profile-info">
+
+          <span class="eyebrow">
+            Sora Hikari Member
+          </span>
+
+          <h1 class="profile-name">
+            Lalapan.kol
+          </h1>
+
+          <div class="profile-username">
+            @lalapan.kol
+          </div>
+
+          <p class="profile-bio">
+            Lalapan.kol merupakan salah satu member
+            Sora Hikari yang aktif dalam berbagai kegiatan
+            idol, performance, dan event.
+          </p>
+
+          <div class="profile-data">
+
+            <div class="data-row">
+              <span class="data-label">Role</span>
+              <span class="data-value">
+                Idol Member
+              </span>
+            </div>
+
+            <div class="data-row">
+              <span class="data-label">Group</span>
+              <span class="data-value">
+                Sora Hikari
+              </span>
+            </div>
+
+            <div class="data-row">
+              <span class="data-label">Instagram</span>
+              <span class="data-value">
+                @lalapan.kol
+              </span>
+            </div>
+
+          </div>
+
+          <div class="profile-actions">
+
+            <a
+              class="profile-btn"
+              href="https://www.instagram.com/lalapan.kol/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+
+            <a
+              class="profile-btn back"
+              href="../index.html#members"
+            >
+              Back to Members
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

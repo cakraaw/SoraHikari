@@ -16,6 +16,7 @@
       photo: "MEMBER/lala.jpg",
       name: "lalapan.kol",
       color: "#4FA9DA",
+      bio: "biodata/lalapan-kol.html",
       ig: "https://www.instagram.com/lalapan.kol/"
     },
     {
@@ -37,6 +38,7 @@
       photo: "MEMBER/onyourc__iciw.jpg",
       name: "onyourc__iciw",
       color: "#F2C79E",
+      bio: "member/lalapan-kol.html",
       ig: "https://www.instagram.com/onyourc__iciw/"
     },
     {
@@ -201,40 +203,40 @@
      MEMBERS
      ========================================================= */
 
-  const memberContainer = document.getElementById("membersGrid");
+  
 
-  if (memberContainer) {
-    memberContainer.innerHTML = members.map((member) => {
-      return `
-        <div class="member-card reveal">
+const memberContainer = document.getElementById("membersGrid");
 
-          <a
-            href="${member.ig}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="member-link"
-            aria-label="Instagram ${member.name}"
-          >
+if (memberContainer) {
+  memberContainer.innerHTML = members.map((member) => {
+    return `
+      <div class="member-card reveal">
 
-            <div class="member-photo">
-              <img
-                src="${member.photo}"
-                alt="${member.name}"
-                loading="lazy"
-              >
-            </div>
+        <a
+          href="${member.bio}"
+          class="member-link"
+          aria-label="Biodata ${member.name}"
+        >
 
-          </a>
+          <div class="member-photo">
+            <img
+              src="${member.photo}"
+              alt="${member.name}"
+              loading="lazy"
+            >
+          </div>
 
           <div class="member-info">
             <span class="member-number">${member.n}</span>
             <span class="member-name">${member.name}</span>
           </div>
 
-        </div>
-      `;
-    }).join("");
-  }
+        </a>
+
+      </div>
+    `;
+  }).join("");
+}
 
 
   /* =========================================================
