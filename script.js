@@ -37,7 +37,7 @@
     },
     {
       n: "",
-      photo: "MEMBER/onyourc__iciw.jpg",
+      photo: "MEMBER/cici.jpg",
       name: "onyourc__iciw",
       color: "#F2C79E",
       bio: "biodata/onyourc__iciw.html",
