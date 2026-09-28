@@ -294,13 +294,14 @@ memberContainer.innerHTML = members.map((member) => {
     }).join("");
   }
 
-  /* =========================================================
-     GALLERY
-     ========================================================= */
+/* =========================================================
+   GALLERY GRID
+   ========================================================= */
 
 const gallery = document.getElementById("gallery");
 
 if (gallery) {
+
   const categories = [
     ...new Set(galleryPhotos.map((photo) => photo.cat))
   ];
@@ -313,32 +314,10 @@ if (gallery) {
     section.innerHTML = `
       <h2 class="gallery-title">${category}</h2>
 
-      <div class="gallery-carousel-wrapper">
-
-        <button
-          type="button"
-          class="gallery-arrow gallery-prev"
-          aria-label="Previous photos"
-        >
-          ‹
-        </button>
-
-        <div class="gallery-grid"></div>
-
-        <button
-          type="button"
-          class="gallery-arrow gallery-next"
-          aria-label="Next photos"
-        >
-          ›
-        </button>
-
-      </div>
+      <div class="gallery-grid"></div>
     `;
 
     const grid = section.querySelector(".gallery-grid");
-    const prevButton = section.querySelector(".gallery-prev");
-    const nextButton = section.querySelector(".gallery-next");
 
     /* =========================
        CREATE GALLERY ITEMS
@@ -375,75 +354,6 @@ if (gallery) {
       });
 
     gallery.appendChild(section);
-
-    /* =========================
-       ARROW NAVIGATION
-       ========================= */
-
-    const getScrollAmount = () => {
-      const item = grid.querySelector(".gallery-item");
-
-      if (!item) return 300;
-
-      const gap = parseInt(
-        getComputedStyle(grid).gap || 20
-      );
-
-      return item.offsetWidth + gap;
-    };
-
-    nextButton.addEventListener("click", () => {
-      grid.scrollBy({
-        left: getScrollAmount(),
-        behavior: "smooth"
-      });
-    });
-
-    prevButton.addEventListener("click", () => {
-      grid.scrollBy({
-        left: -getScrollAmount(),
-        behavior: "smooth"
-      });
-    });
-
-    /* =========================
-       MOUSE DRAG
-       ========================= */
-
-    let isDragging = false;
-    let startX = 0;
-    let startScrollLeft = 0;
-
-    grid.addEventListener("mousedown", (e) => {
-
-      isDragging = true;
-
-      grid.classList.add("is-dragging");
-
-      startX = e.pageX;
-      startScrollLeft = grid.scrollLeft;
-    });
-
-    grid.addEventListener("mousemove", (e) => {
-
-      if (!isDragging) return;
-
-      e.preventDefault();
-
-      const distance = e.pageX - startX;
-
-      grid.scrollLeft =
-        startScrollLeft - distance;
-    });
-
-    const stopDragging = () => {
-      isDragging = false;
-      grid.classList.remove("is-dragging");
-    };
-
-    grid.addEventListener("mouseup", stopDragging);
-    grid.addEventListener("mouseleave", stopDragging);
-
   });
 }
 
@@ -463,7 +373,7 @@ let currentIndex = 0;
 
 
 /* =========================================================
-   GET GALLERY ITEMS
+   GET ALL GALLERY ITEMS
    ========================================================= */
 
 function refreshGalleryItems() {
@@ -511,7 +421,6 @@ function openLightbox(index) {
   lightbox.classList.add("active");
 
   document.body.classList.add("lightbox-open");
-
 }
 
 
@@ -528,7 +437,6 @@ function closeLightbox() {
   lightbox.classList.remove("active");
 
   document.body.classList.remove("lightbox-open");
-
 }
 
 
@@ -549,7 +457,6 @@ function showPrevious() {
     galleryItems.length;
 
   openLightbox(currentIndex);
-
 }
 
 
@@ -570,36 +477,43 @@ function showNext() {
     galleryItems.length;
 
   openLightbox(currentIndex);
-
 }
 
 
 /* =========================================================
    GALLERY CLICK
-   =========================================================
-   Event delegation supaya gallery yang dibuat
-   menggunakan JavaScript tetap bisa diklik.
    ========================================================= */
 
 if (gallery) {
+
   gallery.addEventListener("click", (event) => {
 
-    const button = event.target.closest(".gallery-image-button");
+    const button = event.target.closest(
+      ".gallery-image-button"
+    );
 
-    if (!button) return;
+    if (!button) {
+      return;
+    }
 
     const item = button.closest(".gallery-item");
 
-    if (!item) return;
+    if (!item) {
+      return;
+    }
 
     refreshGalleryItems();
 
     const index = galleryItems.indexOf(item);
 
-    if (index === -1) return;
+    if (index === -1) {
+      return;
+    }
 
     openLightbox(index);
+
   });
+
 }
 
 
@@ -708,22 +622,30 @@ let touchEndX = 0;
 
 if (lightbox) {
 
-  lightbox.addEventListener("touchstart", (event) => {
+  lightbox.addEventListener(
+    "touchstart",
+    (event) => {
 
-    touchStartX =
-      event.changedTouches[0].screenX;
+      touchStartX =
+        event.changedTouches[0].screenX;
 
-  }, { passive: true });
+    },
+    { passive: true }
+  );
 
 
-  lightbox.addEventListener("touchend", (event) => {
+  lightbox.addEventListener(
+    "touchend",
+    (event) => {
 
-    touchEndX =
-      event.changedTouches[0].screenX;
+      touchEndX =
+        event.changedTouches[0].screenX;
 
-    handleLightboxSwipe();
+      handleLightboxSwipe();
 
-  }, { passive: true });
+    },
+    { passive: true }
+  );
 
 }
 
@@ -733,19 +655,16 @@ function handleLightboxSwipe() {
   const swipeDistance =
     touchEndX - touchStartX;
 
-  /* Minimal jarak swipe */
   if (Math.abs(swipeDistance) < 50) {
     return;
   }
 
   if (swipeDistance < 0) {
 
-    // Swipe kiri
     showNext();
 
   } else {
 
-    // Swipe kanan
     showPrevious();
 
   }
