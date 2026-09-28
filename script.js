@@ -61,7 +61,7 @@
       day: "Minggu",
       title: "God Save The Idol",
       location: "Malang",
-      time: "TBA",
+      time: "14:45 WIB",
       status: "Upcoming"
     },
     {
