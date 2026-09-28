@@ -24,6 +24,7 @@
       photo: "MEMBER/shirapiw.jpg",
       name: "shirapiw",
       color: "#C6B8E8",
+      bio: "biodata/shirapiw.html",
       ig: "https://www.instagram.com/shirapiw/"
     },
     {
@@ -31,6 +32,7 @@
       photo: "MEMBER/rora.jpg",
       name: "rorawrus",
       color: "#9BD8C4",
+      bio: "biodata/rorawrus.html",
       ig: "https://www.instagram.com/rorawrus/"
     },
     {
@@ -38,7 +40,7 @@
       photo: "MEMBER/onyourc__iciw.jpg",
       name: "onyourc__iciw",
       color: "#F2C79E",
-      bio: "member/lalapan-kol.html",
+      bio: "biodata/onyourc__iciw.html",
       ig: "https://www.instagram.com/onyourc__iciw/"
     },
     {
@@ -46,6 +48,7 @@
       photo: "MEMBER/millilleta.jpg",
       name: "millilleta",
       color: "#D9AF54",
+      bio: "member/millilleta.html",
       ig: "https://www.instagram.com/millilleta/"
     }
   ];
