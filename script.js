@@ -62,7 +62,7 @@
       title: "God Save The Idol",
       location: "Malang",
       time: "14:45 WIB",
-      status: "Upcoming"
+      status: "Ended"
     },
     {
       date: "11",
@@ -70,7 +70,7 @@
       day: "Minggu",
       title: "Itasha Domei",
       location: "QBIG BSD",
-      time: "TBA",
+      time: "12.30 WIB",
       status: "Upcoming"
     },
     {
