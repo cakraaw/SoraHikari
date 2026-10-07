@@ -74,6 +74,15 @@
       status: "Upcoming"
     },
     {
+      date: "17",
+      month: "Oktober",
+      day: "Sabtu",
+      title: "Velordrome Matsuri",
+      location: "Jakarta International Velodrome",
+      time: "TBA",
+      status: "Upcoming"
+    },
+    {
       date: "18",
       month: "Oktober",
       day: "Minggu",
