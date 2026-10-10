@@ -71,7 +71,7 @@
       title: "Itasha Domei",
       location: "QBIG BSD",
       time: "12.30 WIB",
-      status: "Upcoming"
+      status: "Live"
     },
     {
       date: "17",
