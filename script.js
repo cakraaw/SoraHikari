@@ -79,7 +79,7 @@
       day: "Sabtu",
       title: "Velordrome Matsuri",
       location: "Jakarta International Velodrome",
-      time: "TBA",
+      time: "16.00 WIB",
       status: "Upcoming"
     },
     {
@@ -88,7 +88,7 @@
       day: "Minggu",
       title: "Metal Nightmare",
       location: "ITC Depok",
-      time: "TBA",
+      time: "13.25 WIB",
       status: "Upcoming"
     }
   ];
