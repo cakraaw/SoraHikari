@@ -80,7 +80,7 @@
       title: "Velordrome Matsuri",
       location: "Jakarta International Velodrome",
       time: "16.00 WIB",
-      status: "Upcoming"
+      status: "Ended"
     },
     {
       date: "18",
@@ -89,7 +89,7 @@
       title: "Metal Nightmare",
       location: "ITC Depok",
       time: "13.25 WIB",
-      status: "Upcoming"
+      status: "Ended"
     }
   ];
 
