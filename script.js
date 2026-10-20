@@ -56,41 +56,15 @@
 
   const schedules = [
     {
-      date: "4",
+      date: "25",
       month: "Oktober",
       day: "Minggu",
-      title: "God Save The Idol",
-      location: "Malang",
-      time: "14:45 WIB",
-      status: "Ended"
+      title: "SGC Nippon Bunkasai",
+      location: "Rooftop Mall SGC Cikarang",
+      time: "TBD",
+      status: "upcoming"
     },
-    {
-      date: "11",
-      month: "Oktober",
-      day: "Minggu",
-      title: "Itasha Domei",
-      location: "QBIG BSD",
-      time: "12.30 WIB",
-      status: "Ended"
-    },
-    {
-      date: "17",
-      month: "Oktober",
-      day: "Sabtu",
-      title: "Velordrome Matsuri",
-      location: "Jakarta International Velodrome",
-      time: "16.00 WIB",
-      status: "Ended"
-    },
-    {
-      date: "18",
-      month: "Oktober",
-      day: "Minggu",
-      title: "Metal Nightmare",
-      location: "ITC Depok",
-      time: "13.25 WIB",
-      status: "Ended"
-    }
+    
   ];
 
 
