@@ -61,8 +61,8 @@
       day: "Minggu",
       title: "SGC Nippon Bunkasai",
       location: "Rooftop Mall SGC Cikarang",
-      time: "TBD",
-      status: "upcoming"
+      time: "19,00 WIB",
+      status: "Ended"
     },
     
   ];
