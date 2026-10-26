@@ -61,6 +61,8 @@
       day: "Minggu",
       title: "SGC Nippon Bunkasai",
       location: "Rooftop Mall SGC Cikarang",
+      locationUrl: "https://www.google.com/maps/search/?api=1&query=Rooftop+Mall+SGC+Cikarang",
+      postUrl: "https://www.instagram.com/p/Det0ARigfgF/",
       time: "19,00 WIB",
       status: "Ended"
     },
@@ -232,50 +234,67 @@ memberContainer.innerHTML = members.map((member) => {
      SCHEDULE
      ========================================================= */
 
-  const scheduleGrid = document.getElementById("scheduleGrid");
 
-  if (scheduleGrid) {
-    scheduleGrid.innerHTML = schedules.map((event) => {
-      return `
-        <div class="schedule-card reveal">
+const scheduleGrid = document.getElementById("scheduleGrid");
 
-          <div class="schedule-date">
-            <strong>${event.date}</strong>
-            <span>${event.month}</span>
-          </div>
+if (scheduleGrid) {
+  scheduleGrid.innerHTML = schedules.map((event) => {
+    return `
+      <div class="schedule-card reveal">
 
-          <div class="schedule-info">
+        <div class="schedule-date">
+          <strong>${event.date}</strong>
+          <span>${event.month}</span>
+        </div>
 
-            <span class="schedule-day">
-              ${event.day}
+        <div class="schedule-info">
+
+          <span class="schedule-day">
+            ${event.day}
+          </span>
+
+          <h3>
+            <a
+              href="${event.postUrl || '#'}"
+              ${event.postUrl ? 'target="_blank" rel="noopener noreferrer"' : ''}
+              class="schedule-title-link"
+              ${event.postUrl ? '' : 'aria-disabled="true"'}
+            >
+              ${event.title}
+            </a>
+          </h3>
+
+          <div class="schedule-detail">
+
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              <a
+                href="${event.locationUrl || '#'}"
+                ${event.locationUrl ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                class="schedule-location-link"
+                ${event.locationUrl ? '' : 'aria-disabled="true"'}
+              >
+                ${event.location}
+              </a>
             </span>
 
-            <h3>${event.title}</h3>
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              ${event.time}
+            </span>
 
-            <div class="schedule-detail">
-
-              <span>
-                <i class="fa-solid fa-location-dot"></i>
-                ${event.location}
-              </span>
-
-              <span>
-                <i class="fa-regular fa-clock"></i>
-                ${event.time}
-              </span>
-
-            </div>
-
-          </div>
-
-          <div class="schedule-status">
-            ${event.status}
           </div>
 
         </div>
-      `;
-    }).join("");
-  }
+
+        <div class="schedule-status">
+          ${event.status}
+        </div>
+
+      </div>
+    `;
+  }).join("");
+}
 
 /* =========================================================
    GALLERY GRID
