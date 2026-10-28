@@ -66,7 +66,18 @@
       time: "19,00 WIB",
       status: "Ended"
     },
-    
+
+    {date: "1",
+      month: "November",
+      day: "Minggu",
+      title: "Japan Rock Idol Festival",
+      location: "Atrium Senayan Park Mall",
+      locationUrl: "https://maps.app.goo.gl/NDGto9LmUGCxcRxW7",
+      postUrl: "https://www.instagram.com/p/DfCW_uAgQEF/",
+      time: "TBA",
+      status: "Upcoming"
+    },
+
   ];
 
 
