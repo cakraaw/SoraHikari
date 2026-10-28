@@ -78,6 +78,17 @@
       status: "Upcoming"
     },
 
+    {date: "8",
+      month: "November",
+      day: "Minggu",
+      title: "YORU NO FEST",
+      location: "Mangga Dua Square",
+      locationUrl: "https://maps.app.goo.gl/Bf3bGbqViGdWyzob7",
+      postUrl: "https://www.instagram.com/p/De1xzHGJBq4/",
+      time: "TBA",
+      status: "Upcoming"
+    },
+
   ];
 
 
