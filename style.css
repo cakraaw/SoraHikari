@@ -604,6 +604,28 @@ section{position:relative;}
   box-sizing: border-box;
 }
 
+.schedule-status.upcoming {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.schedule-status.live {
+  background: #ffebee;
+  color: #e53935;
+  animation: livePulse 1.5s infinite;
+}
+
+.schedule-status.ended {
+  background: #eeeeee;
+  color: #757575;
+}
+
+@keyframes livePulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .schedule-date {
   text-align: center;
   line-height: 1;

@@ -54,7 +54,7 @@
   ];
 
 
-  const schedules = [
+const schedules = [
     {
       date: "25",
       month: "Oktober",
@@ -63,11 +63,13 @@
       location: "Rooftop Mall SGC Cikarang",
       locationUrl: "https://www.google.com/maps/search/?api=1&query=Rooftop+Mall+SGC+Cikarang",
       postUrl: "https://www.instagram.com/p/Det0ARigfgF/",
-      time: "19,00 WIB",
-      status: "Ended"
+      time: "19.00 WIB",
+      startAt: "2026-10-25T19:00:00+07:00",
+      endAt: "2026-10-25T23:00:00+07:00"
     },
 
-    {date: "1",
+    {
+      date: "1",
       month: "November",
       day: "Minggu",
       title: "Japan Rock Idol Festival",
@@ -75,10 +77,12 @@
       locationUrl: "https://maps.app.goo.gl/NDGto9LmUGCxcRxW7",
       postUrl: "https://www.instagram.com/p/DfCW_uAgQEF/",
       time: "16.30 WIB",
-      status: "Ended"
+      startAt: "2026-11-01T16:30:00+07:00",
+      endAt: "2026-11-01T21:00:00+07:00"
     },
 
-    {date: "8",
+    {
+      date: "8",
       month: "November",
       day: "Minggu",
       title: "YORU NO FEST",
@@ -86,9 +90,9 @@
       locationUrl: "https://maps.app.goo.gl/Bf3bGbqViGdWyzob7",
       postUrl: "https://www.instagram.com/p/De1xzHGJBq4/",
       time: "TBA",
-      status: "Upcoming"
-    },
-
+      startAt: null,
+      endAt: null
+    }
   ];
 
 
@@ -259,8 +263,40 @@ memberContainer.innerHTML = members.map((member) => {
 
 const scheduleGrid = document.getElementById("scheduleGrid");
 
-if (scheduleGrid) {
-  scheduleGrid.innerHTML = schedules.map((event) => {
+function getScheduleStatus(event) {
+  const now = Date.now();
+
+  if (!event.startAt) {
+    return "Upcoming";
+  }
+
+  const start = new Date(event.startAt).getTime();
+
+  if (now < start) {
+    return "Upcoming";
+  }
+
+  // Jika belum ada waktu selesai
+  // gunakan tanggal berikutnya sebagai batas akhir
+  if (!event.endAt) {
+    return "Ended";
+  }
+
+  const end = new Date(event.endAt).getTime();
+
+  if (now < end) {
+    return "Live";
+  }
+
+  return "Ended";
+}
+
+function renderSchedules() {
+  if (!scheduleGrid) return;
+
+  scheduleGrid.innerHTML = schedules.map((event, index) => {
+    const status = getScheduleStatus(event);
+
     return `
       <div class="schedule-card reveal">
 
@@ -294,7 +330,6 @@ if (scheduleGrid) {
                 href="${event.locationUrl || '#'}"
                 ${event.locationUrl ? 'target="_blank" rel="noopener noreferrer"' : ''}
                 class="schedule-location-link"
-                ${event.locationUrl ? '' : 'aria-disabled="true"'}
               >
                 ${event.location}
               </a>
@@ -309,14 +344,66 @@ if (scheduleGrid) {
 
         </div>
 
-        <div class="schedule-status">
-          ${event.status}
+        <div
+          class="schedule-status ${status.toLowerCase()}"
+          data-schedule-status="${index}"
+        >
+          ${status}
         </div>
 
       </div>
     `;
   }).join("");
+
+  // Aktifkan kembali animasi reveal
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    scheduleGrid.querySelectorAll(".reveal").forEach(card => {
+      observer.observe(card);
+    });
+  } else {
+    scheduleGrid.querySelectorAll(".reveal").forEach(card => {
+      card.classList.add("is-visible");
+    });
+  }
 }
+
+// Update status tanpa merender ulang kartu
+function updateScheduleStatuses() {
+  schedules.forEach((event, index) => {
+    const element = scheduleGrid?.querySelector(
+      `[data-schedule-status="${index}"]`
+    );
+
+    if (!element) return;
+
+    const status = getScheduleStatus(event);
+
+    element.textContent = status;
+    element.className = `schedule-status ${status.toLowerCase()}`;
+  });
+}
+
+// Render pertama
+renderSchedules();
+
+// Update setiap 30 detik
+setInterval(updateScheduleStatuses, 30000);
+
+// Update ketika pengunjung kembali ke halaman
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    updateScheduleStatuses();
+  }
+});
 
 /* =========================================================
    GALLERY GRID
