@@ -89,9 +89,9 @@ const schedules = [
       location: "Mangga Dua Square",
       locationUrl: "https://maps.app.goo.gl/Bf3bGbqViGdWyzob7",
       postUrl: "https://www.instagram.com/p/De1xzHGJBq4/",
-      time: "TBA",
-      startAt: null,
-      endAt: null
+      time: "10.00 WIB",
+      startAt: "2026-11-08T10:00:00+07:00",
+      endAt: "2026-11-08T23:00:00+07:00"
     }
   ];
 
