@@ -75,7 +75,7 @@
       locationUrl: "https://maps.app.goo.gl/NDGto9LmUGCxcRxW7",
       postUrl: "https://www.instagram.com/p/DfCW_uAgQEF/",
       time: "16.30 WIB",
-      status: "Upcoming"
+      status: "Ended"
     },
 
     {date: "8",
